@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Gives you links to any mdns http server",
   "scripts": {
-    "pack": "build --dir",
-    "dist": "build -m",
-    "dist-all": "build -mw --x64 --ia32",
+    "pack": "build --dir -mw --x64 --ia32",
+    "dist": "build -mw --x64 --ia32",
     "postinstall": "install-app-deps"
   },
   "keywords": [],
@@ -20,10 +19,6 @@
   "devDependencies": {
     "electron-builder": "^7.9.0",
     "electron": "^1.4.1"
-  },
-  "dependencies": {
-    "electron": "^1.4.1",
-    "electron-builder": "^7.9.0"
   },
   "repository": {
     "type": "git",

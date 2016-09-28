@@ -10,4 +10,5 @@ function updateDevices(services) {
 
 mdnsBrowser.on('update', updateDevices);
 
+console.log('searching for robots');
 mdnsBrowser.discover();
