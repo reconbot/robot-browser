@@ -2,10 +2,15 @@
 <html>
 <head>
   <title>Find your robot</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self'; style-src * 'unsafe-inline';">
-  <script src="index.js"></script>
+  <metaDisable http-equiv="Content-Security-Policy" content="default-src *; script-src 'self'; style-src * 'unsafe-inline';">
 </head>
 <body>
-
+  <div id="root">
+    <div>
+      <span id="refresh">refresh</span>
+    </div>
+    <div id="ips"></div>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>

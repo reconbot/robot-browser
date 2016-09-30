@@ -6,9 +6,9 @@
   "author": "Francis Gulotta <wizard@roborooter.com",
   "license": "ISC",
   "dependencies": {
+    "electron-open-link-in-browser": "^1.0.2",
     "electron-squirrel-startup": "^1.0.0",
-    "evilscan": "^1.0.2",
-    "mdns-js": "^0.5.0"
+    "evilscan": "^1.0.2"
   },
   "repository": {
     "type": "git",

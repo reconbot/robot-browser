@@ -12,7 +12,7 @@ function createWindow () {
   menus();
   mainWindow = new BrowserWindow({width: 800, height: 600});
   mainWindow.center();
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
   mainWindow.loadURL(`file://${__dirname}/static/index.html`);
   mainWindow.on('closed', function () {
     mainWindow = null;
