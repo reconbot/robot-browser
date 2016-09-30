@@ -2,12 +2,14 @@ if(require('electron-squirrel-startup')) {
   return;
 }
 const electron = require('electron');
+const menus = require('./menus');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
 function createWindow () {
+  menus();
   mainWindow = new BrowserWindow({width: 800, height: 600});
   mainWindow.center();
   mainWindow.openDevTools();
