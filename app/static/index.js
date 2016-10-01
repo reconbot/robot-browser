@@ -7,11 +7,9 @@
 
 const scan = require('./scan');
 const ipView = document.getElementById('ips');
-const openLink = require("electron-open-link-in-browser");
-window.openLink = openLink;
 
 function ipTemplate(ip) {
-  return `<li><a href="http://${ip}/" onClick="openLink()">${ip}</a></li>`;
+  return `<li><a href="http://${ip}/">${ip}</a></li>`;
 }
 
 function ipsTemplate(ips) {
@@ -24,6 +22,7 @@ function ipsTemplate(ips) {
 
 function refresh() {
   scan(ips => {
+    ips.unshift('johnny-five.io');
     ipView.innerHTML = ipsTemplate(ips);
   });
 }

@@ -43,9 +43,18 @@ module.exports = function() {
         type: 'separator'
       },
       {
+        label: 'Scan',
+        accelerator: 'CmdOrCtrl+Left',
+        click: () => {
+          BrowserWindow
+            .getFocusedWindow()
+            .loadURL(`file://${__dirname}/static/index.html`);
+        }
+      },
+      {
         label: 'Toggle DevTools',
         accelerator: 'Alt+Command+I',
-        click: function() { BrowserWindow.getFocusedWindow().toggleDevTools(); }
+        click: () => BrowserWindow.getFocusedWindow().toggleDevTools()
       },
       {
         type: 'separator'
