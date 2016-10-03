@@ -1,6 +1,6 @@
 {
   "name": "robot-browser",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Gives you links to any http server on your network",
   "scripts": {
     "pack": "build --dir -mw --x64 --ia32",
