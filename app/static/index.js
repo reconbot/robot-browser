@@ -15,6 +15,7 @@ function ipTemplate(ip) {
 
 function ipsTemplate(ips) {
   return `
+    <h1>Robots</h1>
     <ul>
       ${ips.map(ipTemplate).join('\n')}
     </ul>
@@ -22,18 +23,17 @@ function ipsTemplate(ips) {
 }
 
 function refresh() {
+  ipView.innerHTML = `<h1>Scanning</h1>`;
   scan(ips => {
     ips.unshift('johnny-five.io');
     ipView.innerHTML = ipsTemplate(ips);
   });
 }
 
-
-document.getElementById('refresh').onClick = (e) => {
+document.getElementById('refresh').addEventListener('click', (e) => {
   e.preventDefault();
   refresh();
-};
-
+});
 
 refresh();
 

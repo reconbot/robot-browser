@@ -2,13 +2,43 @@
 <html>
 <head>
   <title>Find your robot</title>
-  <metaDisable http-equiv="Content-Security-Policy" content="default-src *; script-src 'self'; style-src * 'unsafe-inline';">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self'; style-src * 'unsafe-inline';">
+  <style type="text/css">
+
+    body {
+      font-size: 1.6em;
+    }
+
+    #refresh {
+      float: right;
+      border: 1px solid black;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    a {
+      padding: 10px;
+      display: inline-block;
+      text-decoration: none;
+      border: 1px solid;
+      margin: 5px;
+      color: inherit;
+    }
+
+    a:active {
+      background-color: aliceblue;
+    }
+
+  </style>
 </head>
 <body>
   <div id="root">
-    <div>
-      <span id="refresh">refresh</span>
-    </div>
+    <div id="refresh">refresh</div>
     <div id="ips"></div>
   </div>
   <script src="index.js"></script>
