@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Gives you links to any http server on your network",
   "scripts": {
-    "pack": "build --dir -mw --x64 --ia32",
-    "dist": "build -mw --x64 --ia32",
-    "release": "build",
+    "pack": "build --dir -mw",
+    "dist": "build -mw",
+    "release": "build -mw",
     "postinstall": "install-app-deps"
   },
   "keywords": [],
