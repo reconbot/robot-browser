@@ -1,6 +1,6 @@
 {
   "name": "robot-browser",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Gives you links to any mdns http server",
   "main": "main.js",
   "author": "Francis Gulotta <wizard@roborooter.com",
