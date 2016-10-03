@@ -1,10 +1,11 @@
 {
   "name": "robot-browser",
   "version": "1.0.0",
-  "description": "Gives you links to any mdns http server",
+  "description": "Gives you links to any http server on your network",
   "scripts": {
     "pack": "build --dir -mw --x64 --ia32",
     "dist": "build -mw --x64 --ia32",
+    "release": "build",
     "postinstall": "install-app-deps"
   },
   "keywords": [],
