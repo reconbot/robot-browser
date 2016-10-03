@@ -7,6 +7,7 @@
 
 const scan = require('./scan');
 const ipView = document.getElementById('ips');
+const remote = require("electron").remote;
 
 function ipTemplate(ip) {
   return `<li><a href="http://${ip}/">${ip}</a></li>`;
@@ -35,3 +36,13 @@ document.getElementById('refresh').onClick = (e) => {
 
 
 refresh();
+
+document.addEventListener("keydown", event => {
+  switch (event.key) {
+    case "Escape":
+        if (remote.getCurrentWindow().isFullScreen()) {
+            remote.getCurrentWindow().setFullScreen(false);
+        }
+        break;
+     }
+});

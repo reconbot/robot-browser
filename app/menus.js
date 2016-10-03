@@ -5,43 +5,12 @@ var {
   app,
 } = require('electron');
 
-module.exports = function() {
+module.exports = () => {
 
   // Create the Application's main menu
   var template = [{
     label: 'Robot Browser',
     submenu: [
-      {
-        label: 'About Electron',
-        selector: 'orderFrontStandardAboutPanel:'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Services',
-        submenu: []
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Hide Electron',
-        accelerator: 'Command+H',
-        selector: 'hide:'
-      },
-      {
-        label: 'Hide Others',
-        accelerator: 'Command+Shift+H',
-        selector: 'hideOtherApplications:'
-      },
-      {
-        label: 'Show All',
-        selector: 'unhideAllApplications:'
-      },
-      {
-        type: 'separator'
-      },
       {
         label: 'Scan',
         accelerator: 'CmdOrCtrl+Left',
@@ -52,8 +21,31 @@ module.exports = function() {
         }
       },
       {
+        label: 'Reload',
+        accelerator: 'CmdOrCtrl+R',
+        click: () => {
+          BrowserWindow
+            .getFocusedWindow()
+            .reload();
+        }
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: 'Full Screen',
+        accelerator: 'CmdOrCtrl+f',
+        click: () => {
+          let win = BrowserWindow.getFocusedWindow();
+          win.setFullScreen(!win.isFullScreen());
+        }
+      },
+      {
+        type: 'separator'
+      },
+      {
         label: 'Toggle DevTools',
-        accelerator: 'Alt+Command+I',
+        accelerator: 'Alt+CmdOrCtrl+I',
         click: () => BrowserWindow.getFocusedWindow().toggleDevTools()
       },
       {
@@ -61,7 +53,7 @@ module.exports = function() {
       },
       {
         label: 'Quit',
-        accelerator: 'Command+Q',
+        accelerator: 'CmdOrCtrl+Q',
         click: () =>  app.quit()
       },
     ]
@@ -71,12 +63,12 @@ module.exports = function() {
     submenu: [
       {
         label: 'Undo',
-        accelerator: 'Command+Z',
+        accelerator: 'CmdOrCtrl+Z',
         selector: 'undo:'
       },
       {
         label: 'Redo',
-        accelerator: 'Shift+Command+Z',
+        accelerator: 'Shift+CmdOrCtrl+Z',
         selector: 'redo:'
       },
       {
@@ -84,22 +76,22 @@ module.exports = function() {
       },
       {
         label: 'Cut',
-        accelerator: 'Command+X',
+        accelerator: 'CmdOrCtrl+X',
         selector: 'cut:'
       },
       {
         label: 'Copy',
-        accelerator: 'Command+C',
+        accelerator: 'CmdOrCtrl+C',
         selector: 'copy:'
       },
       {
         label: 'Paste',
-        accelerator: 'Command+V',
+        accelerator: 'CmdOrCtrl+V',
         selector: 'paste:'
       },
       {
         label: 'Select All',
-        accelerator: 'Command+A',
+        accelerator: 'CmdOrCtrl+A',
         selector: 'selectAll:'
       },
     ]
@@ -109,26 +101,15 @@ module.exports = function() {
     submenu: [
       {
         label: 'Minimize',
-        accelerator: 'Command+M',
+        accelerator: 'CmdOrCtrl+M',
         selector: 'performMiniaturize:'
       },
       {
         label: 'Close',
-        accelerator: 'Command+W',
+        accelerator: 'CmdOrCtrl+W',
         selector: 'performClose:'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Bring All to Front',
-        selector: 'arrangeInFront:'
-      },
+      }
     ]
-  },
-  {
-    label: 'Help',
-    submenu: []
   }];
 
   menu = Menu.buildFromTemplate(template);
