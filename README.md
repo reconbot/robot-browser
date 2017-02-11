@@ -1,5 +1,7 @@
 # Robot Browser
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/reconbot/robot-browser.svg)](https://greenkeeper.io/)
+
 Gives you links to any http server on your network.
 
 [Download!](https://github.com/reconbot/robot-browser/releases) for windows and mac
