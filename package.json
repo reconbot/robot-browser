@@ -18,8 +18,8 @@
     }
   },
   "devDependencies": {
-    "electron-builder": "^7.9.0",
-    "electron": "^1.4.1"
+    "electron": "^1.8.2",
+    "electron-builder": "^20.0.4"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/reconbot/robot-browser/issues"
   },
-  "homepage": "https://github.com/reconbot/robot-browser#readme"
+  "homepage": "https://github.com/reconbot/robot-browser#readme",
+  "dependencies": {}
 }
