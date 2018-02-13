@@ -10,12 +10,12 @@ const subnet2cidr = function(subnet_mask) {
   return cidr_bits;
 }
 
-function scan(cidr, cb) {
+function scan(cidr, port, cb) {
   const hosts = [];
   console.log('scanning', cidr);
   const scanner = new Scanner({
     target: cidr,
-    port: 80,
+    port,
     status: 'O',
     banner: false,
     timeout: 500,
@@ -31,7 +31,7 @@ function scan(cidr, cb) {
   scanner.run();
 }
 
-function scanAll(cb) {
+function scanAll(port, cb) {
   const interfaces = os.networkInterfaces();
   console.log('interfaces', interfaces);
   const ips = Object
@@ -50,7 +50,7 @@ function scanAll(cb) {
   let hosts = [];
   let scanned = 0;
   cidrs.forEach(cidr => {
-    scan(cidr, (scanHosts) => {
+    scan(cidr, port, (scanHosts) => {
       hosts = hosts.concat(scanHosts);
       scanned++;
       if (scanned >= cidrs.length) {

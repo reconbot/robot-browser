@@ -5,28 +5,29 @@
 
 // require('./react');
 
-const scan = require('./scan');
+const scanAll = require('./scan');
 const ipView = document.getElementById('ips');
 const remote = require("electron").remote;
 
-function ipTemplate(ip) {
-  return `<li><a href="http://${ip}/">${ip}</a></li>`;
+function ipTemplate(ip, port) {
+  return `<li><a href="http://${ip}:${port}/">${ip}:${port}</a></li>`;
 }
 
-function ipsTemplate(ips) {
+function ipsTemplate(ips, port) {
   return `
     <h1>Robots</h1>
     <ul>
-      ${ips.map(ipTemplate).join('\n')}
+      ${ips.map(ip => ipTemplate(ip, port)).join('\n')}
     </ul>
   `;
 }
 
 function refresh() {
+  const port = 80
   ipView.innerHTML = `<h1>Scanning</h1>`;
-  scan(ips => {
+  scanAll(port, ips => {
     ips.unshift('johnny-five.io');
-    ipView.innerHTML = ipsTemplate(ips);
+    ipView.innerHTML = ipsTemplate(ips, port);
   });
 }
 
