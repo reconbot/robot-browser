@@ -1,6 +1,6 @@
 {
   "name": "robot-browser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gives you links to any http server on your network",
   "scripts": {
     "pack": "build --dir -mwl",
