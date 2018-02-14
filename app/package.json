@@ -1,7 +1,7 @@
 {
   "name": "robot-browser",
-  "version": "0.0.1",
-  "description": "Gives you links to any mdns http server",
+  "version": "0.0.2",
+  "description": "Gives you links to any http server on your network",
   "main": "main.js",
   "author": "Francis Gulotta <wizard@roborooter.com",
   "license": "ISC",
