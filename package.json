@@ -4,7 +4,7 @@
   "description": "Gives you links to any http server on your network",
   "scripts": {
     "pack": "build --dir -mwl",
-    "dist": "build -mw",
+    "dist": "build -mwl",
     "release": "build -mwl",
     "postinstall": "install-app-deps"
   },
