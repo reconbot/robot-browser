@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-builder": "^20.0.4"
+    "electron-builder": "^20.31.1"
   },
   "repository": {
     "type": "git",
